@@ -1,9 +1,9 @@
 package org.rtjvm.scala.oop.commands
-import org.rtjvm.scala.oop.files.{DirEntry, Directory}
+import org.rtjvm.scala.oop.files.{DirEntry, File}
 import org.rtjvm.scala.oop.filesystem.State
 
-class Mkdir(name: String) extends CreateEntry(name) {
+class Touch(name: String) extends CreateEntry(name) {
   override def createSpecificEntry(state: State): DirEntry = {
-    Directory.empty(state.wd.path, name)
+    File.empty(state.wd.path, name)
   }
 }
